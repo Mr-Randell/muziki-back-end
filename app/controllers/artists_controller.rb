@@ -1,4 +1,5 @@
 class ArtistsController < ApplicationController
+    wrap_parameters format: []
     def index
         render json: Artist.all, status: :ok
     end
@@ -11,6 +12,16 @@ class ArtistsController < ApplicationController
             render json: {error: "Artist not found"}, status: :not_found
         end
     end
+
+    def create
+        artist = Artist.create(artist_params)
+        render json: artist, status: :created
+    end
+
+    private
+
+    def artist_params
+        params.permit(:name, :country_of_origin, :age)
+    end
+
 end
-
-
