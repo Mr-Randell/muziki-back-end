@@ -11,7 +11,7 @@ rescue_from ActiveRecord::RecordNotFound, with: :render_no_record_response
 
     def create
         
-        playlist=Playlist.create(playlist_params)
+        playlist=Playlist.create!(playlist_params)
         render json: playlist, status: :created
     
     rescue ActiveRecord::RecordInvalid => invalid
