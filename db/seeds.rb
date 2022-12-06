@@ -5,3 +5,39 @@
 #
 #   movies = Movie.create([{ name: "Star Wars" }, { name: "Lord of the Rings" }])
 #   Character.create(name: "Luke", movie: movies.first)
+
+Artist.create(
+    name: Faker::Name.name,
+    country_of_origin: Faker::Address.country,
+    age: rand(1..99)
+)
+
+Artist.create(
+    name: Faker::Name.name,
+    country_of_origin: Faker::Address.country,
+    age: rand(1..99)
+)
+
+Artist.create(
+    name: Faker::Name.name,
+    country_of_origin: Faker::Address.country,
+    age: rand(1..99)
+)
+
+Artist.create(
+    name: Faker::Name.name,
+    country_of_origin: Faker::Address.country,
+    age: rand(1..99)
+)
+
+Artist.create(
+    name: Faker::Name.name,
+    country_of_origin: Faker::Address.country,
+    age: rand(1..99)
+)
+
+Artist.create(
+    name: Faker::Name.name,
+    country_of_origin: Faker::Address.country,
+    age: rand(1..99)
+)
