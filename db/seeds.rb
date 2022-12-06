@@ -5,3 +5,20 @@
 #
 #   movies = Movie.create([{ name: "Star Wars" }, { name: "Lord of the Rings" }])
 #   Character.create(name: "Luke", movie: movies.first)
+
+
+User.create(name: Faker::Name.name, email: Faker::Internet.email, password: Faker::Internet.password)
+User.create(name: Faker::Name.name, email: Faker::Internet.email, password: Faker::Internet.password)
+User.create(name: Faker::Name.name, email: Faker::Internet.email, password: Faker::Internet.password)
+User.create(name: Faker::Name.name, email: Faker::Internet.email, password: Faker::Internet.password)
+User.create(name: Faker::Name.name, email: Faker::Internet.email, password: Faker::Internet.password)
+User.create(name: Faker::Name.name, email: Faker::Internet.email, password: Faker::Internet.password)
+User.create(name: Faker::Name.name, email: Faker::Internet.email, password: Faker::Internet.password)
+User.create(name: Faker::Name.name, email: Faker::Internet.email, password: Faker::Internet.password)
+User.create(name: Faker::Name.name, email: Faker::Internet.email, password: Faker::Internet.password)
+
+
+Playlist.create(name: "Top 20 Hottest Hits", description: "The Top Trending songs of 2022")
+Playlist.create(name: "My Morning Vibe", description: "Smooth waking up songs")
+Playlist.create(name: "Friday Night Vibes", description: "The Club Bangers Songs")
+
