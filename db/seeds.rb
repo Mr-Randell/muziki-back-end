@@ -41,3 +41,78 @@ Artist.create(
     country_of_origin: Faker::Address.country,
     age: rand(1..99)
 )
+
+Song.create(
+    name: Faker::Name.name,
+    genre: Faker::Music.genre,
+    year_of_release: rand(1995..2022)
+)
+
+Song.create(
+    name: Faker::Name.name,
+    genre: Faker::Music.genre,
+    year_of_release: rand(1995..2022)
+)
+
+
+Song.create(
+    name: Faker::Name.name,
+    genre: Faker::Music.genre,
+    year_of_release: rand(1995..2022)
+)
+
+Song.create(
+    name: Faker::Name.name,
+    genre: Faker::Music.genre,
+    year_of_release: rand(1995..2022)
+)
+
+Song.create(
+    name: Faker::Name.name,
+    genre: Faker::Music.genre,
+    year_of_release: rand(1995..2022)
+)
+
+Song.create(
+    name: Faker::Name.name,
+    genre: Faker::Music.genre,
+    year_of_release: rand(1995..2022)
+)
+
+
+Song.create(
+    name: Faker::Name.name,
+    genre: Faker::Music.genre,
+    year_of_release: rand(1995..2022)
+)
+
+Song.create(
+    name: Faker::Name.name,
+    genre: Faker::Music.genre,
+    year_of_release: rand(1995..2022)
+)
+
+Song.create(
+    name: Faker::Name.name,
+    genre: Faker::Music.genre,
+    year_of_release: rand(1995..2022)
+)
+
+Song.create(
+    name: Faker::Name.name,
+    genre: Faker::Music.genre,
+    year_of_release: rand(1995..2022)
+)
+
+
+Song.create(
+    name: Faker::Name.name,
+    genre: Faker::Music.genre,
+    year_of_release: rand(1995..2022)
+)
+
+Song.create(
+    name: Faker::Name.name,
+    genre: Faker::Music.genre,
+    year_of_release: rand(1995..2022)
+)
