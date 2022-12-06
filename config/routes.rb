@@ -1,3 +1,3 @@
 Rails.application.routes.draw do
-  resources :artists, only: [:index, :show, :create]
+  resources :artists, only: [:index, :show, :create, :update]
 end

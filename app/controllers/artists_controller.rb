@@ -18,10 +18,21 @@ class ArtistsController < ApplicationController
         render json: artist, status: :created
     end
 
+    def update
+        # find
+        artist = Artist.find_by(id: params[:id])
+        if artist
+            #update 
+            artist.update(artist_params)
+            render json: artist, status: :accepted
+        else
+            render json: {error: "Artist not found"}, status: :not_found
+        end
+    end
+
     private
 
     def artist_params
         params.permit(:name, :country_of_origin, :age)
     end
-
 end
