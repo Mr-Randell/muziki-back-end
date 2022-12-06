@@ -30,6 +30,17 @@ class ArtistsController < ApplicationController
         end
     end
 
+    def destroy
+         # find
+         artist = Artist.find_by(id: params[:id])
+         if artist
+            artist.destroy
+            head :no_content
+         else
+            render json: {error: "Artist not found"}, status: :not_found
+         end
+    end
+
     private
 
     def artist_params
