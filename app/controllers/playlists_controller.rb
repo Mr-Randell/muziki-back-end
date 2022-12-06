@@ -37,7 +37,9 @@ rescue_from ActiveRecord::RecordNotFound, with: :render_no_record_response
         playlist = Playlist.find_by(id: params[:id])
         if playlist
             playlist.destroy
+            render json: {}
             head :no_content
+           
         else
             render json: {error:  "Playlist not Found"}, status: :not_found
         end
