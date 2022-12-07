@@ -10,8 +10,17 @@ rescue_from ActiveRecord::RecordNotFound, with: :render_no_record_response
         render json: playlists, status: :ok
     end
     def show
-        playlist=Playlist.find(params[:id])
-        render json: playlist, status: :ok
+        #playlist=Playlist.find(params[:id])
+        #render json: playlist, status: :ok,
+        #serializer: CustomPlaylistSerializer
+        if params[:user_id]
+            user = User.find(params[:user_id])
+            playlists = user.playlists
+        else
+            playlists=Playlist.find(params[:id])
+        end
+        render json: playlists, include: :user
+    
     end
 
     def create

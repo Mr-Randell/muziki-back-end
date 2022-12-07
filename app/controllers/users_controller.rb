@@ -16,7 +16,7 @@ class UsersController < ApplicationController
     end
     def show
         user =User.find(params[:id])
-        render json: user, status: :ok
+        render json: user, include: :playlists, status: :ok
     end
 
     def update
@@ -24,7 +24,6 @@ class UsersController < ApplicationController
        user.update(params.permit(:password))
        render json: user, status: :ok
     end
-
     private
     def render_not_found_response
         render json: {error: "User Not Found"}, status: :not_found

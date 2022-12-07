@@ -127,7 +127,14 @@ User.create(name: Faker::Name.name, email: Faker::Internet.email, password: Fake
 User.create(name: Faker::Name.name, email: Faker::Internet.email, password: Faker::Internet.password)
 
 
-Playlist.create(name: "Top 20 Hottest Hits", description: "The Top Trending songs of 2022")
-Playlist.create(name: "My Morning Vibe", description: "Smooth waking up songs")
-Playlist.create(name: "Friday Night Vibes", description: "The Club Bangers Songs")
+
+user1= User.create(name: Faker::Name.name, email: Faker::Internet.email, password: Faker::Internet.password)
+user2 = User.create(name: Faker::Name.name, email: Faker::Internet.email, password: Faker::Internet.password)
+user3 =User.create(name: Faker::Name.name, email: Faker::Internet.email, password: Faker::Internet.password)
+
+
+
+Playlist.create(name: "Top 20 Hottest Hits", description: "The Top Trending songs of 2022", user_id: user1.id)
+Playlist.create(name: "My Morning Vibe", description: "Smooth waking up songs", user_id: user1.id)
+Playlist.create(name: "Friday Night Vibes", description: "The Club Bangers Songs", user_id: user2.id)
 

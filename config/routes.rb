@@ -4,9 +4,12 @@ Rails.application.routes.draw do
   resources :songs, only: [:index, :show, :create, :update, :destroy]
   resources :artists, only: [:index, :show, :create, :update, :destroy]
 
-  resources :users
+  resources :users do
+    resource :playlists, only: [:show]
+  end
 
   resources :playlists
+
 
   post "/login", to: "user_authentications#create"
   delete "/logout/:id", to: "user_authentications#destroy"
