@@ -116,3 +116,9 @@ Song.create(
     genre: Faker::Music.genre,
     year_of_release: rand(1995..2022)
 )
+
+Test.create(
+    name: Faker::Name.name,
+    genre: Faker::Music.genre,
+    year_of_release: rand(1995..2022)
+)

@@ -1,50 +1,51 @@
 class SongsController < ApplicationController
-        wrap_parameters format: []
-        def index
-            render json: Song.all, status: :ok
-        end
-    
-        def show
-            song = Song.find_by(id:params[:id])
-            if song
-                render json: song, status: :ok
-            else 
-                render json: {error: "Song not found"}, status: :not_found
-            end
-        end
-    
-        def create
-            song = Song.create(song_params)
-            render json: song, status: :created
-        end
-    
-        def update
-            # find
-            song = Song.find_by(id: params[:id])
-            if song
-                #update 
-                song.update(song_params)
-                render json: song, status: :accepted
-            else
-                render json: {error: "Song not found"}, status: :not_found
-            end
-        end
-    
-        def destroy
-             # find
-             song = Song.find_by(id: params[:id])
-             if song
-                song.destroy
-                head :no_content
-             else
-                render json: {error: "Song not found"}, status: :not_found
-             end
-        end
-    
-        private
-    
-        def song_params
-            params.permit(:name, :genre, :year_of_release)
-        end
+  before_action :set_song, only: %i[ show update destroy ]
+
+  # GET /songs
+  def index
+    @songs = Song.all
+
+    render json: @songs
+  end
+
+  # GET /songs/1
+  def show
+    render json: @song
+  end
+
+  # POST /songs
+  def create
+    @song = Song.new(song_params)
+
+    if @song.save
+      render json: @song, status: :created, location: @song
+    else
+      render json: @song.errors, status: :unprocessable_entity
+    end
+  end
+
+  # PATCH/PUT /songs/1
+  def update
+    if @song.update(song_params)
+      render json: @song
+    else
+      render json: @song.errors, status: :unprocessable_entity
+    end
+  end
+
+  # DELETE /songs/1
+  def destroy
+    @song.destroy
+  end
+
+  private
+    # Use callbacks to share common setup or constraints between actions.
+    def set_song
+      @song = Song.find(params[:id])
+    end
+
+    # Only allow a list of trusted parameters through.
+    def song_params
+      params.require(:song).permit(:name, :genre, :year_of_release)
+    end
 end
-    
