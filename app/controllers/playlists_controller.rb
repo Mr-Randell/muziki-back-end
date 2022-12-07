@@ -1,4 +1,7 @@
 class PlaylistsController < ApplicationController
+before_action :authorize
+skip_before_action :authorize, only: [:index]
+
 rescue_from ActiveRecord::RecordNotFound, with: :render_no_record_response
 
 
@@ -53,5 +56,9 @@ rescue_from ActiveRecord::RecordNotFound, with: :render_no_record_response
     end
     def playlist_params
         params.permit(:name, :description)
+    end
+
+    def authorize
+      return render json: { error: "Not authorized" }, status: :unauthorized unless session.include? :user_id
     end
 end
