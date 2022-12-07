@@ -115,10 +115,19 @@ Song.create(
     name: Faker::Name.name,
     genre: Faker::Music.genre,
     year_of_release: rand(1995..2022)
-)
 
-Test.create(
-    name: Faker::Name.name,
-    genre: Faker::Music.genre,
-    year_of_release: rand(1995..2022)
-)
+User.create(name: Faker::Name.name, email: Faker::Internet.email, password: Faker::Internet.password)
+User.create(name: Faker::Name.name, email: Faker::Internet.email, password: Faker::Internet.password)
+User.create(name: Faker::Name.name, email: Faker::Internet.email, password: Faker::Internet.password)
+User.create(name: Faker::Name.name, email: Faker::Internet.email, password: Faker::Internet.password)
+User.create(name: Faker::Name.name, email: Faker::Internet.email, password: Faker::Internet.password)
+User.create(name: Faker::Name.name, email: Faker::Internet.email, password: Faker::Internet.password)
+User.create(name: Faker::Name.name, email: Faker::Internet.email, password: Faker::Internet.password)
+User.create(name: Faker::Name.name, email: Faker::Internet.email, password: Faker::Internet.password)
+User.create(name: Faker::Name.name, email: Faker::Internet.email, password: Faker::Internet.password)
+
+
+Playlist.create(name: "Top 20 Hottest Hits", description: "The Top Trending songs of 2022")
+Playlist.create(name: "My Morning Vibe", description: "Smooth waking up songs")
+Playlist.create(name: "Friday Night Vibes", description: "The Club Bangers Songs")
+

@@ -23,16 +23,23 @@ ActiveRecord::Schema[7.0].define(version: 2022_12_07_071145) do
     t.string "name"
     t.string "genre"
     t.integer "year_of_release"
+
+
+ActiveRecord::Schema[7.0].define(version: 2022_12_06_153209) do
+  create_table "playlists", force: :cascade do |t|
+    t.string "name"
+    t.string "description"
+
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
 
-  create_table "tests", force: :cascade do |t|
+  create_table "users", force: :cascade do |t|
     t.string "name"
-    t.string "genre"
-    t.integer "year_of_release"
+    t.string "email"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.string "password_digest
   end
 
 end
