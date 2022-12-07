@@ -12,7 +12,7 @@ rescue_from ActiveRecord::RecordNotFound, with: :render_no_record_response
             user = User.find(params[:user_id])
             playlists = user.playlists
         else
-            playlists = Playlist.all
+            playlists=Playlist.find(params[:id])
         end
         render json: playlists, include: :user
     
