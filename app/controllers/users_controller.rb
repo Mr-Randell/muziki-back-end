@@ -18,7 +18,13 @@ class UsersController < ApplicationController
         user =User.find(params[:id])
         render json: user, status: :ok
     end
-    
+
+    def update
+       user = User.find(params[:id])
+       user.update(params.permit(:password))
+       render json: user, status: :ok
+    end
+
     private
     def render_not_found_response
         render json: {error: "User Not Found"}, status: :not_found
