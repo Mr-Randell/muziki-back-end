@@ -1,5 +1,8 @@
 Rails.application.routes.draw do
 
+  resources :songs, only: [:index, :show, :create, :update, :destroy]
+  resources :artists, only: [:index, :show, :create, :update, :destroy]
+
   resources :users
 
   resources :playlists
@@ -8,4 +11,5 @@ Rails.application.routes.draw do
 
   # Defines the root path route ("/")
   # root "articles#index"
+
 end

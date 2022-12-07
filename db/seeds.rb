@@ -6,6 +6,115 @@
 #   movies = Movie.create([{ name: "Star Wars" }, { name: "Lord of the Rings" }])
 #   Character.create(name: "Luke", movie: movies.first)
 
+Artist.create(
+    name: Faker::Name.name,
+    country_of_origin: Faker::Address.country,
+    age: rand(1..99)
+)
+
+Artist.create(
+    name: Faker::Name.name,
+    country_of_origin: Faker::Address.country,
+    age: rand(1..99)
+)
+
+Artist.create(
+    name: Faker::Name.name,
+    country_of_origin: Faker::Address.country,
+    age: rand(1..99)
+)
+
+Artist.create(
+    name: Faker::Name.name,
+    country_of_origin: Faker::Address.country,
+    age: rand(1..99)
+)
+
+Artist.create(
+    name: Faker::Name.name,
+    country_of_origin: Faker::Address.country,
+    age: rand(1..99)
+)
+
+Artist.create(
+    name: Faker::Name.name,
+    country_of_origin: Faker::Address.country,
+    age: rand(1..99)
+)
+
+Song.create(
+    name: Faker::Name.name,
+    genre: Faker::Music.genre,
+    year_of_release: rand(1995..2022)
+)
+
+Song.create(
+    name: Faker::Name.name,
+    genre: Faker::Music.genre,
+    year_of_release: rand(1995..2022)
+)
+
+
+Song.create(
+    name: Faker::Name.name,
+    genre: Faker::Music.genre,
+    year_of_release: rand(1995..2022)
+)
+
+Song.create(
+    name: Faker::Name.name,
+    genre: Faker::Music.genre,
+    year_of_release: rand(1995..2022)
+)
+
+Song.create(
+    name: Faker::Name.name,
+    genre: Faker::Music.genre,
+    year_of_release: rand(1995..2022)
+)
+
+Song.create(
+    name: Faker::Name.name,
+    genre: Faker::Music.genre,
+    year_of_release: rand(1995..2022)
+)
+
+
+Song.create(
+    name: Faker::Name.name,
+    genre: Faker::Music.genre,
+    year_of_release: rand(1995..2022)
+)
+
+Song.create(
+    name: Faker::Name.name,
+    genre: Faker::Music.genre,
+    year_of_release: rand(1995..2022)
+)
+
+Song.create(
+    name: Faker::Name.name,
+    genre: Faker::Music.genre,
+    year_of_release: rand(1995..2022)
+)
+
+Song.create(
+    name: Faker::Name.name,
+    genre: Faker::Music.genre,
+    year_of_release: rand(1995..2022)
+)
+
+
+Song.create(
+    name: Faker::Name.name,
+    genre: Faker::Music.genre,
+    year_of_release: rand(1995..2022)
+)
+
+Song.create(
+    name: Faker::Name.name,
+    genre: Faker::Music.genre,
+    year_of_release: rand(1995..2022)
 
 User.create(name: Faker::Name.name, email: Faker::Internet.email, password: Faker::Internet.password)
 User.create(name: Faker::Name.name, email: Faker::Internet.email, password: Faker::Internet.password)
