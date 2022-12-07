@@ -1,5 +1,6 @@
 class SongsController < ApplicationController
   before_action :set_song, only: %i[ show update destroy ]
+  rescue_from ActiveRecord::RecordNotFound, with: :render_not_found_response
 
   # GET /songs
   def index
@@ -47,5 +48,9 @@ class SongsController < ApplicationController
     # Only allow a list of trusted parameters through.
     def song_params
       params.require(:song).permit(:name, :genre, :year_of_release)
+    end
+
+    def render_not_found_response
+     render json: {error: "song not found"}
     end
 end
