@@ -6,7 +6,9 @@ rescue_from ActiveRecord::RecordNotFound, with: :render_no_record_response
     end
     def show
         playlist=Playlist.find(params[:id])
-        render json: playlist, status: :ok
+        render json: playlist, status: :ok,
+        serializer: CustomPlaylistSerializer
+    
     end
 
     def create
