@@ -1,5 +1,7 @@
 class PlaylistsController < ApplicationController
 rescue_from ActiveRecord::RecordNotFound, with: :render_no_record_response
+
+
     def index
         playlists=Playlist.all
         render json: playlists, status: :ok
