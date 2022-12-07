@@ -6,6 +6,7 @@ Rails.application.routes.draw do
   resources :playlists
 
   post "/login", to: "user_authentications#create"
+  delete "/logout/:id", to: "user_authentications#destroy"
 
 
   # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
