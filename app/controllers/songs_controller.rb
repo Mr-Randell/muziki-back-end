@@ -16,27 +16,39 @@ class SongsController < ApplicationController
 
   # POST /songs
   def create
-    @song = Song.new(song_params)
+    artist = Artist.find(params[:artist_id])
+    artist.songs.create(song_params)
 
-    if @song.save
-      render json: @song, status: :created, location: @song
+    if artist.songs
+      render json: artist.songs.last , status: :created
     else
-      render json: @song.errors, status: :unprocessable_entity
+     render json: artist.errors, status: :unprocessable_entity
     end
   end
 
   # PATCH/PUT /songs/1
   def update
-    if @song.update(song_params)
-      render json: @song
+    artist = Artist.find(params[:artist_id])
+    if artist
+      song =artist.songs.find(params[:id])
+      song.update(song_params)
+
+      render json: song, status: :ok
     else
-      render json: @song.errors, status: :unprocessable_entity
+      render json: artist.errors, status: :unprocessable_entity
     end
   end
 
   # DELETE /songs/1
   def destroy
-    @song.destroy
+    artist = Artist.find(params[:artist_id])
+    if artist
+      song =artist.songs.find(params[:id])
+      song.destroy
+      head :no_content
+    else
+      render json: artist.errors, status: :unprocessable_entity
+    end
   end
 
   private
@@ -51,6 +63,6 @@ class SongsController < ApplicationController
     end
 
     def render_not_found_response
-     render json: {error: "song not found"}
+     render json: {error: "artist not found"}
     end
 end
