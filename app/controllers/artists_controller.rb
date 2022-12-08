@@ -1,7 +1,15 @@
 class ArtistsController < ApplicationController
     wrap_parameters format: []
     def index
-        render json: Artist.all, status: :ok
+        #render json: Artist.all, status: :ok
+        if params[:artist_id]
+            artist = Artist.find(params[:artist_id])
+            songs= artist.songs
+            render json: songs, include: :artist, status: :ok 
+        else
+            render json: Artist.all, status: :ok
+        end
+    
     end
 
     def show
