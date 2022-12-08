@@ -5,6 +5,7 @@ class User < ApplicationRecord
 
     validates :email, presence: true, uniqueness: true
 
-    has_many :playists
-    has_many :songs, through: :playists
+    has_many :playlists, dependent: :destroy
+
+    has_many :songs, through: :playlists, dependent: :destroy
 end

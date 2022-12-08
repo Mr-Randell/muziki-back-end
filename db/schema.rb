@@ -10,10 +10,16 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
+ActiveRecord::Schema[7.0].define(version: 2022_12_07_071145) do
 
-ActiveRecord::Schema[7.0].define(version: 2022_12_06_150359) do
+  create_table "artists", force: :cascade do |t|
+    t.string "name"
+    t.string "country_of_origin"
+    t.integer "age"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
 
-ActiveRecord::Schema[7.0].define(version: 2022_12_06_153209) do
   create_table "playlists", force: :cascade do |t|
     t.string "name"
     t.string "description"
@@ -21,6 +27,25 @@ ActiveRecord::Schema[7.0].define(version: 2022_12_06_153209) do
     t.datetime "updated_at", null: false
   end
 
+  create_table "songs", force: :cascade do |t|
+    t.string "name"
+    t.string "genre"
+    t.integer "year_of_release"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.integer "artist_id"
+    t.index ["artist_id"], name: "index_songs_on_artist_id"
+  end
+
+  create_table "playlists", force: :cascade do |t|
+    t.string "name"
+    t.string "genre"
+    t.integer "year_of_release"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.integer "user_id", null: false
+    t.index ["user_id"], name: "index_playlists_on_user_id"
+  end
 
   create_table "users", force: :cascade do |t|
     t.string "name"
@@ -30,4 +55,7 @@ ActiveRecord::Schema[7.0].define(version: 2022_12_06_153209) do
     t.string "password_digest"
   end
 
+
+  add_foreign_key "songs", "artists"
+  add_foreign_key "playlists", "users"
 end
