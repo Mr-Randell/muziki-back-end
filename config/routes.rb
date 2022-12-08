@@ -2,13 +2,17 @@ Rails.application.routes.draw do
   #resources :user_authentications
 
   resources :songs, only: [:index, :show, :create, :update, :destroy]
-  resources :artists, only: [:index, :show, :create, :update, :destroy]
+  resources :artists, only: [:index, :show, :create, :update, :destroy] do
+    resources :songs
+  end
 
   resources :users do
     resource :playlists, only: [:show]
   end
 
-  resources :playlists
+  resources :playlists do
+     resources :songs
+  end
 
 
   post "/login", to: "user_authentications#create"
