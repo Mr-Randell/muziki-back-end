@@ -1,0 +1,2 @@
+class UserAuthentication < ApplicationRecord
+end

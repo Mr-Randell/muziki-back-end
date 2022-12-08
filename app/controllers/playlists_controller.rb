@@ -1,12 +1,26 @@
 class PlaylistsController < ApplicationController
+before_action :authorize
+skip_before_action :authorize, only: [:index]
+
 rescue_from ActiveRecord::RecordNotFound, with: :render_no_record_response
+
+
     def index
         playlists=Playlist.all
         render json: playlists, status: :ok
     end
     def show
-        playlist=Playlist.find(params[:id])
-        render json: playlist, status: :ok
+        #playlist=Playlist.find(params[:id])
+        #render json: playlist, status: :ok,
+        #serializer: CustomPlaylistSerializer
+        if params[:user_id]
+            user = User.find(params[:user_id])
+            playlists = user.playlists
+        else
+            playlists=Playlist.find(params[:id])
+        end
+        render json: playlists, include: :user
+    
     end
 
     def create
@@ -51,5 +65,9 @@ rescue_from ActiveRecord::RecordNotFound, with: :render_no_record_response
     end
     def playlist_params
         params.permit(:name, :description)
+    end
+
+    def authorize
+      return render json: { error: "Not authorized" }, status: :unauthorized unless session.include? :user_id
     end
 end
