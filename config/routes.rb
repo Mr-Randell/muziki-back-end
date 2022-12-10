@@ -1,6 +1,6 @@
 Rails.application.routes.draw do
   #resources :user_authentications
-
+  #resources :test
   resources :songs, only: [:index, :show, :create, :update, :destroy]
   resources :artists, only: [:index, :show, :create, :update, :destroy] do
     resources :songs
@@ -14,7 +14,7 @@ Rails.application.routes.draw do
      resources :songs
   end
 
-
+  get "/charts/world", to: "test#index"
   post "/login", to: "user_authentications#create"
   delete "/logout/:id", to: "user_authentications#destroy"
 
