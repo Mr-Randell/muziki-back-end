@@ -8,7 +8,7 @@ class TestController < ApplicationController
 
         songs= get_songs
 
-       render json: songs[0], status: :ok
+       render json: songs, status: :ok
     end
 
     def song
