@@ -11,6 +11,9 @@ gem "rails", "~> 7.0.4"
 # Use sqlite3 as the database for Active Record
 gem "sqlite3", "~> 1.4"
 
+# gem for solving CORS bugs
+gem 'rack-cors'
+
 # Use the Puma web server [https://github.com/puma/puma]
 gem "puma", "~> 5.0"
 
