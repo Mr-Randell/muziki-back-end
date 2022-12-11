@@ -14,7 +14,8 @@ Rails.application.routes.draw do
      resources :songs
   end
 
-  get "/charts/world", to: "test#index"
+  get "/charts/world", to: "test#all_songs"
+  get "/charts/world/:id", to: "test#song"
   post "/login", to: "user_authentications#create"
   delete "/logout/:id", to: "user_authentications#destroy"
 

@@ -2,7 +2,27 @@ require 'uri'
 require 'net/http'
 require 'openssl'
 class TestController < ApplicationController
-    def index
+   
+
+    def all_songs
+
+        songs= get_songs
+
+       render json: songs, status: :ok
+    end
+
+    def song
+
+      songs= get_songs
+      song_id = params[:id].to_i
+
+      render json: songs[song_id], status: :ok
+    end
+
+ 
+    private
+
+    def get_songs
         url = URI("https://shazam-core.p.rapidapi.com/v1/charts/world")
 
         http = Net::HTTP.new(url.host, url.port)
@@ -14,6 +34,11 @@ class TestController < ApplicationController
         request["X-RapidAPI-Host"] = 'shazam-core.p.rapidapi.com'
         
         response = http.request(request)
-        render json: response.read_body, status: :ok
+
+        songs =JSON.parse(response.body)
+        
+       
     end
+
+  
 end
