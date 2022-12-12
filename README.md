@@ -11,6 +11,12 @@ Building a MUSIC APP API backend that uses Active Record to access and persist d
 - Build a separate React frontend application that interacts with the API to perform CRUD actions.
 - Use good OO design patterns. You should have separate classes for each of your models, and create instance and class methods as necessary.
 
+
+
+
+# Front-End Repo
+View [LIVE](https://github.com/Mr-Randell/muziki-front-end):
+
 ## Backend Setup ✴️
 - [x] cd into muziki-back-end folder and run `bundle install` from your terminal which will install all the gems 
 - [x] seed the database with data using cmd `rails db:seed` or alternatively you can use `rails db:reset` to delete everything in the database and seed it with data to be fetched by an API
