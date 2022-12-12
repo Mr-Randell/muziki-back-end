@@ -22,9 +22,9 @@ class TestController < ApplicationController
 
   def get_track_details
 
-     song_id = params[:track_id]
+     song_id = song_id.to_i
 
-     url = URI("https://shazam-core.p.rapidapi.com/v1/tracks/details?track_id=#{params[:track_id]}")
+     url = URI("https://shazam-core.p.rapidapi.com/v1/tracks/details?track_id=#{params[:song_id]}")
     
      http = Net::HTTP.new(url.host, url.port)
       http.use_ssl = true
