@@ -1,18 +1,18 @@
 databases:
-  - name: muziki-api
-    databaseName: muziki-api
-    user: muziki-api
+  - name: muziki_api
+    databaseName: muziki_api
+    user: muziki_api
 
 services:
   - type: web
-    name: muziki-api
+    name: muziki_api
     env: ruby
     buildCommand: "./bin/render-build.sh"
     startCommand: "bundle exec puma -C config/puma.rb"
     envVars:
       - key: DATABASE_URL
         fromDatabase:
-          name: muziki-api
+          name: muziki_api
           property: connectionString
       - key: RAILS_MASTER_KEY
         sync: false
