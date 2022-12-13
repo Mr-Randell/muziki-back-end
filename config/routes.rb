@@ -17,6 +17,10 @@ Rails.application.routes.draw do
   get "/charts/world", to: "test#all_songs"
   # trying to fix bug here, uncomment below
   get "/tracks/details/:song_id", to: "test#get_track_details"
+  get "/tracks/related/:song_id", to: "test#get_related_track"
+  get "/artist/details/:artist_id", to: "test#get_artist_details"
+  get "/search/:search_term", to: "test#get_search_term"
+  get "/charts/country/:country_code", to: "test#get_by_country"
   get "/songs/:id", to: "test#song"
   post "/login", to: "user_authentications#create"
   delete "/logout/:id", to: "user_authentications#destroy"

@@ -52,7 +52,7 @@ As a user 👨‍💻, I can:
 This project was contributed to by:
 
 - [Kevin Lomenen](https://github.com/kevin-lomenen) Backend Developer
-- [Randell Hera](https://github.com/Mr-Randell) Frontend Developer
+- [Randell Hera](https://github.com/Mr-Randell) Frontend Developer, Scrum Master
 - [Denis Muturi](https://github.com/dennismuturi) Backend Developer\
 - [Alex Karumbi](https://github.com/alexkarumbi) Frontend Developer
 
